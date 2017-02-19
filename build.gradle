@@ -1,0 +1,30 @@
+group 'com.claudioliveira'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.0.6'
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'maven'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "com.claudioliveira:cassandra-connector:1.0-SNAPSHOT"
+    compile "com.claudioliveira:rabbitmq-connector:1.0-SNAPSHOT"
+    compile group: 'com.google.inject', name: 'guice', version: '4.1.0'
+    compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: '2.8.4'
+}
